@@ -3,14 +3,15 @@
 var gulp   = require('gulp'),
     del    = require('del'),
     sass   = require('gulp-sass'),
-    jade   = require('gulp-jade'),
-    autoprefixer = require('gulp-autoprefixer');
+    jade   = require('gulp-jade');
 
 gulp.task('clean', function () {
   del(['.tmp', 'public']);
 });
 
 gulp.task('sass', function () {
+  var autoprefixer = require('gulp-autoprefixer');
+
   gulp
     .src('app/styles/main.scss')
     .pipe(sass())
